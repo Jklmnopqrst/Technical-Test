@@ -1,0 +1,37 @@
+<!--Write a program that takes an integer as input and returns an integer with reversed digit ordering-->>
+
+
+
+<!DOCTYPE html>
+<html>
+  <body style="background-color: rgb(248, 239, 228);">
+    <style>                 
+    /*CSS styles for color and font size*/
+      #result {
+        color: rgb(243, 8, 78);
+        font-size: 25px;
+       
+      }
+    </style>
+    <!-- This line creates an input element of type "number" with the ID "numInput". -->
+    <input type="number" id="numInput" />  
+
+    <!-- This line creates a button element that calls the reverseDigits() function when clicked -->
+
+    <button onclick="reverseDigits()">Reverse Digits</button>
+
+    <!-- This line creates a paragraph element with the ID "result". -->
+    <p id="result"></p>
+
+    <script>
+      function reverseDigits() {     //This line defines the reverseDigits() function.
+        const num = document.getElementById("numInput").value;//This line gets the value of the input element with the ID "numInput".
+        const strNum = String(num);   //This line converts the num value to a string
+        const reversedStrNum = strNum.split('').reverse().join('');//This line splits the strNum string into an array of characters, reverses the array, and joins it back into a string.
+        const reversedInt = parseInt(reversedStrNum);//This line converts the reversedStrNum string back into an integer.
+        const result = num >= 0 ? reversedInt : -reversedInt;//This line checks if the original number was positive or negative. If it was positive, the reversed integer is used as the result. If it was negative, the reversed integer is negated to maintain the negative sign.
+        document.getElementById("result").innerHTML = `Result: ${result}`;//This line sets the inner HTML of the paragraph element with the ID "result" to the reversed digits of the input number. The reversed digits are displayed within the paragraph element on the web page.
+      }
+    </script>
+  </body>
+</html>
